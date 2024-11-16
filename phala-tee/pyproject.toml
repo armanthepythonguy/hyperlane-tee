@@ -1,0 +1,29 @@
+[project]
+name = "phala-tee"
+version = "0.1.0"
+description = "Default template for PDM package"
+authors = [
+    {name = "armanthepythonguy", email = "armanityours@gmail.com"},
+]
+dependencies = [
+    "fastapi>=0.115.4",
+    "pydantic>=2.9.2",
+    "python-dotenv>=1.0.1",
+    "uvicorn[standard]>=0.32.0",
+    "python-multipart>=0.0.17",
+    "unicorn[standard]>=2.1.1",
+    "dstack-sdk>=0.1.2",
+    "evidence-api>=0.5.0",
+    "web3>=7.5.0",
+]
+requires-python = "==3.13.*"
+readme = "README.md"
+license = {text = "MIT"}
+
+
+[tool.pdm]
+distribution = false
+
+[tool.pdm.scripts]
+start = "uvicorn main:app --reload --host 0.0.0.0"
+event = "python events.py"
